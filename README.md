@@ -21,3 +21,24 @@ finally it results in:
 ![MacDown Screenshot](./finalImage.png)
 
 and some Excel Files in the current folder
+
+#Results
+From the Excelfiles one can make plots. In my case I used Origin Pro. Each Excelfile has multiple cols but three important:
+
+1. cte
+2. diffCTE
+3. interStageCTE
+
+CTE is calculatet by delta of length divided by product of change of temperatur and initial length.
+The Aramis System uses a stochastic pattern to track the movement of the pattern. One can calculate the CTE by units of 0,013 mm squares and this within one stage witch is called Inter Stage CTE here. Also on can calculate the changes of squares by comparing Stages (Differencial CTE) and finally the hole probe over the hole length which seams tho be the best way as one can see in the following plots.
+
+**The given measurments in the /tests folder are transit liquit phase (TLP) foils from 30 µm Ag and 5 µm In and 5 µm Sn !!!**
+
+(... means they are not linear on the hotplate... this was the reason for doing my reasearch about the methods to measure it the right way)
+
+## Inter Stage CTE
+![MacDown Screenshot](./kupferinterstagecte.png)
+## Differencial CTE
+![MacDown Screenshot](./kupferdiffcte.png)
+## CTE over the hole length of the probe
+![MacDown Screenshot](./kupferreferenzmessung.png)
