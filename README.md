@@ -22,7 +22,7 @@ finally it results in:
 
 and some Excel Files in the current folder
 
-#Results
+# Results
 From the Excelfiles one can make plots. In my case I used Origin Pro. Each Excelfile has multiple cols but three important (CTE, diffCTE, InterStageCTE):
 
 
