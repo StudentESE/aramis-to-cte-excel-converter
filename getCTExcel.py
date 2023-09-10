@@ -244,6 +244,9 @@ def parallelCalculatingCTE(parameters):
         rowsDeltaL = line[2]
         rowsL = line[1]
         calculatedInterStageSquareCTE.append(round(getCTEInterStageSquare(rowsDeltaL,(temperatureOfFilename-30),rowsL, stage)*1000000,6))
+        #staticKelvin = 20 # die DeltaL scheinen sich auf die Referenz zu beziehen
+        #calculatedInterStageSquareCTE.append(round(getCTEInterStageSquare(rowsDeltaL,(staticKelvin),rowsL, stage)*1000000,6))
+
     # https://blog.finxter.com/numpy-runtimewarning-mean-of-empty-slice/
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", category=RuntimeWarning)
@@ -422,12 +425,19 @@ if __name__ == '__main__':
                             sectionLengthOfSqares.append(l)
                     else:
                         alphas = []
+                        dLs = []
                         i = 0
+                        s = 0
+                        for dL in tableOfMeasurements['deltaL']:
+                            dLs.append(dL)
+                            s+=1
                         for l in tableOfMeasurements['l0']:
-                            deltaLOfSqare = l-sectionLengthOfSqares[i]
+                            deltaLOfSqare = l-sectionLengthOfSqares[i] # berechnet Delta manuell aus L0_stage0 und L0_stage_i denn das Ergebnis ist nicht der wert in DeltaL !!
                             if sectionLengthOfSqares[i] != 0.0:
                                 alphas.append(deltaLOfSqare/((temperature-20)*sectionLengthOfSqares[i]))
+                                #alphas.append(dLs[i]/((temperature-20)*l))
                             i+=1
+
                         # https://blog.finxter.com/numpy-runtimewarning-mean-of-empty-slice/
                         with warnings.catch_warnings():
                             warnings.simplefilter("ignore", category=RuntimeWarning)
