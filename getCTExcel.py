@@ -3,7 +3,7 @@
 """
 Created on Tue Jul 11 16:39:32 2023
 
-@author: student
+@author: Daniel Bunzendahl
 """
 
 try:
