@@ -25,9 +25,15 @@ and some Excel Files in the current folder
 #Results
 From the Excelfiles one can make plots. In my case I used Origin Pro. Each Excelfile has multiple cols but three important:
 
-1. cte
-2. diffCTE
-3. interStageCTE
+
+![MacDown Screenshot](./CTEAbolut.png)
+
+
+![MacDown Screenshot](./CTEdiff.png)
+
+
+![MacDown Screenshot](./CTEinterStage.png)
+
 
 CTE is calculatet by delta of length divided by product of change of temperatur and initial length.
 The Aramis System uses a stochastic pattern to track the movement of the pattern. One can calculate the CTE by units of 0,013 mm squares and this within one stage witch is called Inter Stage CTE here. Also on can calculate the changes of squares by comparing Stages (Differencial CTE) and finally the hole probe over the hole length which seams tho be the best way as one can see in the following plots.
