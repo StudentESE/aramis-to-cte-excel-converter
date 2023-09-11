@@ -1,7 +1,9 @@
 # aramis-to-cte-excel-converter
 This software is used for measurements from ARAMIS Differencial Image Correlation (DIC) for calculation of the the thermal expansion coefficient (CTE).
 
-To do so you need to know a lot about the data structure which will be explained in a later commit.
+To do so you need to know a lot about the data structure which will be explained in a later commit. If you do not get things running, you can find the results within the folder `./demo_results` where you can find CTE values of three different methods of calculation.
+
+***Important***: The key differenz by methods is the effect of calculating means at multiple places in the process of converting measurments into results. By getting means you lose information! The **Absolut CTE** Methode is focused to use mean as less as possible.  
 
 Currently it is simple the submission for a master thesis.
 
