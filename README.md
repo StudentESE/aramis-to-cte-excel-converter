@@ -11,6 +11,7 @@ Currently it is simple the submission for a master thesis.
 ```
 python3 -m pip install pandas numpy matplotlib rich alive_progress openpyxl warnings
 ```
+[**Troubleshooting:** Helpful Tips you can find here ...](#troubleshooting)
 
 # Running
 ```
@@ -50,3 +51,10 @@ From the Excelfiles one can make plots. In my case I used Origin Pro. Each Excel
 ![MacDown Screenshot](./kupferdiffcte.png)
 ## CTE over the hole length of the probe
 ![MacDown Screenshot](./kupferreferenzmessung.png)
+
+# <a name="troubleshooting"></a> Troubleshooting
+* Windows-Version of the package alive_progress has to be installed with a different name which simple differs by the _ and - in name (alive_progress => alive-progress install)
+* sometimes `pip install --upgrade pip` helps
+* `pip install rich --upgrade` should fix the rich error under Windows
+* Use Mac OS because this is the platform is used for development
+`
