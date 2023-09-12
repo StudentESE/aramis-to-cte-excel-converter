@@ -11,7 +11,7 @@ Currently it is simple the submission for a master thesis.
 ```
 python3 -m pip install pandas numpy matplotlib rich alive_progress openpyxl warnings
 ```
-[**Troubleshooting:** Helpful Tips you can find here ...](#troubleshooting)
+[**Troubleshooting:** Helpful Tips (click here ...)](#troubleshooting)
 
 # Running
 ```
@@ -43,7 +43,7 @@ From the Excelfiles one can make plots. In my case I used Origin Pro. Each Excel
 
 **The given measurments in the /tests folder are transit liquit phase (TLP) foils from 30 µm Ag and 5 µm In and 5 µm Sn !!!**
 
-(... means they are not linear on the hotplate... this was the reason for doing my reasearch about the methods to measure it the right way)
+(... means they are not linear on the hotplate... this was the reason for doing my research about the methods to measure it the right way)
 
 ## Inter Stage CTE
 ![MacDown Screenshot](./kupferinterstagecte.png)
@@ -57,4 +57,6 @@ From the Excelfiles one can make plots. In my case I used Origin Pro. Each Excel
 * sometimes `pip install --upgrade pip` helps
 * `pip install rich --upgrade` should fix the rich error under Windows
 * Use Mac OS because this is the platform is used for development
+* force python letting stdout to be unbuffered using the `-u` flag
+* fix alive_progress problems with `pip install alive-progress`
 `
