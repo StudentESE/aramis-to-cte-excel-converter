@@ -16,6 +16,7 @@ try:
     import time
     from rich.progress import track
     import multiprocessing as mp
+    from multiprocessing import cpu_count
     import logging
     import threading
     from multiprocessing.pool import Pool
@@ -36,7 +37,7 @@ except Exception as e:
     print("** ---------------------- **")
     print("** Auszuführender Befehl: **")
     print("")
-    print("python3 -m pip install pandas numpy matplotlib rich alive_progress openpyxl warnings")
+    print("python3 -m pip install pandas numpy matplotlib rich alive_progress alive-progress openpyxl warnings pytest-warnings")
     print("")
     print("")
     print("")
@@ -315,6 +316,7 @@ if __name__ == '__main__':
     # Using Logging the best way https://codegree.de/python-logging/
     logging.basicConfig(format='%(levelname)s:%(message)s',level=logging.INFO)
     NUM_WORKERS = 40
+    n_cores = cpu_count()
     mp.freeze_support()
     # Prevenht warnings about non using .loc[..] ttps://statologie.de/setting-with-copy-warning-pandas/
     pd.options.mode.chained_assignment = None
@@ -474,9 +476,9 @@ if __name__ == '__main__':
         parallelCalculatingCTE(filenamesMaxL0[0])
         sys.exit(0)
     startPoolTimer = time.time()
-    with Pool(processes=4) as pool:
-        
-        result = pool.map_async(parallelCalculatingCTE, filenamesMaxL0, chunksize=5)#, callback=safeExcel)
+    with Pool(processes=n_cores) as pool:
+        print("Bitte warten ... (Nutze %s von %s CPU Kernen)" % (n_cores,n_cores))
+        result = pool.map_async(parallelCalculatingCTE, filenamesMaxL0, chunksize=2)#, callback=safeExcel)
         result.wait()
         print("all done!")
         endPoolTimer = time.time()
